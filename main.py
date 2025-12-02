@@ -41,7 +41,7 @@ class MyPlugin(Star):
             pass
 
         if tar_type == "stack":
-            message = "{:f} 个物品可以堆叠成 {:.2f} 组——".format(item, (item / stack))
+            message = "{:.0f} 个物品可以堆叠成 {:.2f} 组——".format(item, (item / stack))
         elif tar_type == "box" or type == "chest":
             count_box = item / stack / 27
             message = "{:f} 个物品可以塞满 {:.2f} 个箱子~".format(item, count_box)
