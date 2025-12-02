@@ -1,6 +1,6 @@
-from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult
-from astrbot.api.star import Context, Star, register
-from astrbot.api import logger
+from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult # pyright: ignore[reportMissingImports]
+from astrbot.api.star import Context, Star, register # pyright: ignore[reportMissingImports]
+from astrbot.api import logger # pyright: ignore[reportMissingImports]
 import requests
 
 @register("mcTools", "Name", "一个mc服务器便携工具包", "1.0.0")
