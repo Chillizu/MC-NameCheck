@@ -49,10 +49,10 @@ class MyPlugin(Star):
             count_largechest = item / stack / 54
             message = "{:f} 个物品可以塞满 {:.2f} 个大箱子！".format(item, count_largechest)
         else:
-            message = " 命令出错啦QAQ, 正确的写法也许是这样: /itemcount [物品数量] {结果类型: stack/box/chest/largechest} {源数据类型: single/stack/box/chest/largechest} {堆叠数目}"
+            message = "命令出错啦QAQ, 正确的写法也许是这样: /itemcount [物品数量] {结果类型: stack/box/chest/largechest} {源数据类型: single/stack/box/chest/largechest} {堆叠数目}"
 
         logger.info(message)
-        yield event.plain_result(message) # 发送一条纯文本消息        
+        yield event.plain_result("  " + message) # 发送一条纯文本消息        
 
     async def terminate(self):
         """可选择实现异步的插件销毁方法，当插件被卸载/停用时会调用。"""
