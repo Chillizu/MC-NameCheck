@@ -20,9 +20,9 @@ class MyPlugin(Star):
         data = response.json()
 
         if 'errorMessage' in data:
-            message = f"名称 {name} 可用"
+            message = f" 名称 {name} 可用"
         else:
-            message = f"名称 {name} 已被占用, id={data['id']}"
+            message = f" 名称 {name} 已被占用, id={data['id']}"
         logger.info(message)
         yield event.plain_result(message) # 发送一条纯文本消息
 
@@ -49,7 +49,7 @@ class MyPlugin(Star):
             count_largechest = item / stack / 54
             message = "{:f} 个物品可以塞满 {:.2f} 个大箱子！".format(item, count_largechest)
         else:
-            message = "命令出错啦QAQ, 正确的写法也许是这样: /itemcount [物品数量] {结果类型: stack/box/chest/largechest} {源数据类型: single/stack/box/chest/largechest} {堆叠数目}"
+            message = " 命令出错啦QAQ, 正确的写法也许是这样: /itemcount [物品数量] {结果类型: stack/box/chest/largechest} {源数据类型: single/stack/box/chest/largechest} {堆叠数目}"
 
         logger.info(message)
         yield event.plain_result(message) # 发送一条纯文本消息        
