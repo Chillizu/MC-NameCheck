@@ -44,10 +44,10 @@ class MyPlugin(Star):
             message = "{:.0f} 个物品可以堆叠成 {:.2f} 组——".format(item, (item / stack))
         elif tar_type == "box" or type == "chest":
             count_box = item / stack / 27
-            message = "{:f} 个物品可以塞满 {:.2f} 个箱子~".format(item, count_box)
+            message = "{:.0f} 个物品可以塞满 {:.2f} 个箱子~".format(item, count_box)
         elif tar_type == "largechest":
             count_largechest = item / stack / 54
-            message = "{:f} 个物品可以塞满 {:.2f} 个大箱子！".format(item, count_largechest)
+            message = "{:.0f} 个物品可以塞满 {:.2f} 个大箱子！".format(item, count_largechest)
         else:
             message = "命令出错啦QAQ, 正确的写法也许是这样: /itemcount [物品数量] {结果类型: stack/box/chest/largechest} {源数据类型: single/stack/box/chest/largechest} {堆叠数目}"
 
