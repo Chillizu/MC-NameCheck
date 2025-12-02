@@ -13,8 +13,8 @@ class MyPlugin(Star):
 
     # 注册指令的装饰器。指令名为 helloworld。注册成功后，发送 `/helloworld` 就会触发这个指令，并回复 `你好, {user_name}!`
     @filter.command("namecheck")
-    async def helloworld(self, event: AstrMessageEvent, name: str):
-        """这是一个 hello world 指令""" # 这是 handler 的描述，将会被解析方便用户了解插件内容。建议填写。
+    async def checkname(self, event: AstrMessageEvent, name: str):
+        """名称冲突查询""" # 这是 handler 的描述，将会被解析方便用户了解插件内容。建议填写。
         url = str('https://api.mojang.com/users/profiles/minecraft/' + name)
         response = requests.get(url)
         data = response.json()
@@ -27,8 +27,8 @@ class MyPlugin(Star):
         yield event.plain_result(message) # 发送一条纯文本消息
 
     @filter.command("itemcount")
-    async def helloworld(self, event: AstrMessageEvent, item: int, tar_type: str="group", raw_type: str="single", stack: int=64):
-        """这是一个 hello world 指令""" # 这是 handler 的描述，将会被解析方便用户了解插件内容。建议填写。
+    async def calculator(self, event: AstrMessageEvent, item: int, tar_type: str="group", raw_type: str="single", stack: int=64):
+        """物品数量计算器""" # 这是 handler 的描述，将会被解析方便用户了解插件内容。建议填写。
         if raw_type == "single":
             pass
         elif raw_type == "stack":
